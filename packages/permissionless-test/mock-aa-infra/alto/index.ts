@@ -320,7 +320,7 @@ export const setupContracts = async (rpc: string) => {
             nonce: nonce++
         })
     ])
-    
+
     await Promise.all([
         walletClient.sendTransaction({
             to: SAFE_SINGLETON_FACTORY,
@@ -395,14 +395,14 @@ export const setupContracts = async (rpc: string) => {
         })
     ])
 
-    const rhinestoneAttester = "0x000000333034E9f539ce08819E12c1b8Cb29084d" 
+    const rhinestoneAttester = "0x000000333034E9f539ce08819E12c1b8Cb29084d"
     await anvilClient.setBalance({
         address: rhinestoneAttester,
         value: parseEther("100")
     })
 
     await anvilClient.impersonateAccount({
-        address: rhinestoneAttester 
+        address: rhinestoneAttester
     })
 
     // register schema
@@ -420,7 +420,7 @@ export const setupContracts = async (rpc: string) => {
     })
 
     await anvilClient.stopImpersonatingAccount({
-        address: rhinestoneAttester   
+        address: rhinestoneAttester
     })
 
     // deploy module
@@ -443,7 +443,6 @@ export const setupContracts = async (rpc: string) => {
     await anvilClient.stopImpersonatingAccount({
         address: rhinestoneAttester
     })
-
 
     // ==== SETUP KERNEL V0.6 CONTRACTS ==== //
     const kernelFactoryOwner = "0x9775137314fE595c943712B0b336327dfa80aE8A"
